@@ -1,0 +1,223 @@
+{
+  "name": "ai-role-master",
+  "displayName": "AI Role Master",
+  "description": "为AI助手提供专业角色扮演能力，支持多角色协同对话",
+  "version": "1.0.0",
+  "publisher": "your-publisher-name",
+  "author": {
+    "name": "Your Name",
+    "email": "your-email@example.com"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Machine Learning"
+  ],
+  "keywords": [
+    "AI",
+    "assistant",
+    "role",
+    "prompt",
+    "chat",
+    "developer",
+    "productivity"
+  ],
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/ai-role-master/issues"
+  },
+  "homepage": "https://github.com/your-username/ai-role-master#readme",
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:ai-role-master.selectRole",
+    "onCommand:ai-role-master.createRole",
+    "onCommand:ai-role-master.importRole",
+    "onCommand:ai-role-master.exportRole",
+    "onCommand:ai-role-master.manageRoles",
+    "onCommand:ai-role-master.browseMarket",
+    "onView:roleList"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "ai-role-master.selectRole",
+        "title": "选择AI角色",
+        "category": "AI Role Master"
+      },
+      {
+        "command": "ai-role-master.createRole",
+        "title": "创建自定义角色",
+        "category": "AI Role Master"
+      },
+      {
+        "command": "ai-role-master.importRole",
+        "title": "导入角色",
+        "category": "AI Role Master"
+      },
+      {
+        "command": "ai-role-master.exportRole",
+        "title": "导出角色",
+        "category": "AI Role Master"
+      },
+      {
+        "command": "ai-role-master.manageRoles",
+        "title": "管理角色",
+        "category": "AI Role Master"
+      },
+      {
+        "command": "ai-role-master.browseMarket",
+        "title": "浏览角色市场",
+        "category": "AI Role Master"
+      },
+      {
+        "command": "ai-role-master.clearRole",
+        "title": "清除当前角色",
+        "category": "AI Role Master"
+      },
+      {
+        "command": "ai-role-master.applyRole",
+        "title": "应用当前角色（自动注入）",
+        "category": "AI Role Master",
+        "icon": "$(rocket)"
+      },
+      {
+        "command": "ai-role-master.copyRolePrompt",
+        "title": "复制角色提示词（用于当前对话）",
+        "category": "AI Role Master"
+      },
+      {
+        "command": "ai-role-master.startGroupChat",
+        "title": "启动一人公司群聊模式",
+        "category": "AI Role Master"
+      },
+      {
+        "command": "ai-role-master.addRoleToGroup",
+        "title": "添加角色到群聊",
+        "category": "AI Role Master"
+      },
+      {
+        "command": "ai-role-master.searchRoles",
+        "title": "搜索角色",
+        "category": "AI Role Master",
+        "icon": "$(search)"
+      },
+      {
+        "command": "ai-role-master.toggleGrouping",
+        "title": "切换分组显示",
+        "category": "AI Role Master",
+        "icon": "$(list-tree)"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "ai-role-master",
+          "title": "AI Role Master",
+          "icon": "$(person)"
+        }
+      ]
+    },
+    "views": {
+      "ai-role-master": [
+        {
+          "id": "roleList",
+          "name": "我的角色"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "roleList",
+        "contents": "暂无角色\n[\u5b89装预设角色](command:ai-role-master.browseMarket)\n[\u521b建自定义角色](command:ai-role-master.createRole)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "ai-role-master.searchRoles",
+          "when": "view == roleList",
+          "group": "navigation@1"
+        },
+        {
+          "command": "ai-role-master.toggleGrouping",
+          "when": "view == roleList",
+          "group": "navigation@2"
+        },
+        {
+          "command": "ai-role-master.refreshRoles",
+          "when": "view == roleList",
+          "group": "navigation@3"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "ai-role-master.activateRole",
+          "when": "view == roleList && viewItem == role",
+          "group": "inline@1"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "AI Role Master",
+      "properties": {
+        "aiRoleMaster.currentRole": {
+          "type": "string",
+          "default": "",
+          "description": "当前激活的角色ID"
+        },
+        "aiRoleMaster.autoApplyRole": {
+          "type": "boolean",
+          "default": true,
+          "description": "自动应用角色到AI对话"
+        },
+        "aiRoleMaster.marketUrl": {
+          "type": "string",
+          "default": "https://raw.githubusercontent.com/your-org/ai-role-market/main/roles.json",
+          "description": "角色市场URL"
+        },
+        "aiRoleMaster.groupChatMode": {
+          "type": "boolean",
+          "default": false,
+          "description": "启用一人公司群聊模式（多角色协同）"
+        },
+        "aiRoleMaster.groupChatRoles": {
+          "type": "array",
+          "default": [],
+          "description": "群聊中的角色ID列表"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.x",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.x",
+    "@typescript-eslint/parser": "^6.x",
+    "eslint": "^8.x",
+    "typescript": "^5.3.0",
+    "@vscode/vsce": "^2.22.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/ai-role-master"
+  },
+  "license": "MIT"
+}
