@@ -235,7 +235,7 @@ vsce publish
 4. **专业性**：保持专业但清晰的语气
 5. **实用性**：强调提供可执行的建议
 
-## 已知问题
+## 待
 
 - 角色评分和评论系统暂未实现
 - 市场角色下载依赖网络连接
@@ -259,13 +259,13 @@ MIT License - 详见 [LICENSE](LICENSE) 文件
 
 ## 联系方式
 
-- Issues: [GitHub Issues](https://github.com/your-username/ai-role-master/issues)
-- Email: your-email@example.com
+- Issues: [GitHub Issues](https://github.com/renoNyami/IDE-RoleMaster/issues)
+- Email: 2465217194@qq.com
 
 ## 鸣谢
 
 感谢所有贡献者和社区成员。
+感谢SillyTavern项目
+--
 
----
 
-**专业的AI对话体验。**
