@@ -29,7 +29,7 @@
 
 ### 安装
 
-**从VS Code市场安装**
+**从VS Code市场安装（暂未上传）**
 1. 打开VS Code
 2. 进入扩展面板（Ctrl+Shift+X）
 3. 搜索 "AI Role Master"
