@@ -1,10 +1,6 @@
 # AI Role Master
 
 为AI助手提供专业角色扮演能力，支持创建、管理和切换不同专业角色，实现多角色协同对话。
-
-## 核心功能
-<img width="1712" height="717" alt="image" src="https://github.com/user-attachments/assets/309b3d54-c909-4b3c-a227-85e6ca3ecb2f" />
-
 ### 多角色支持
 - 预设专业角色：前端工程师、后端工程师、产品经理、测试工程师、DevOps工程师、UI设计师等
 - 自定义角色：创建符合需求的专属AI角色
@@ -25,6 +21,8 @@
 - 可视化角色选择界面
 - 智能提示词生成
 - 支持3-6个角色协同
+- <img width="1712" height="717" alt="image" src="https://github.com/user-attachments/assets/a417d0c3-ba99-4823-8692-515571cd45e4" />
+
 
 ## 快速开始
 
