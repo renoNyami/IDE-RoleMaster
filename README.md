@@ -3,6 +3,7 @@
 为AI助手提供专业角色扮演能力，支持创建、管理和切换不同专业角色，实现多角色协同对话。
 
 ## 核心功能
+<img width="1712" height="717" alt="image" src="https://github.com/user-attachments/assets/309b3d54-c909-4b3c-a227-85e6ca3ecb2f" />
 
 ### 多角色支持
 - 预设专业角色：前端工程师、后端工程师、产品经理、测试工程师、DevOps工程师、UI设计师等
